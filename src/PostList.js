@@ -3,9 +3,7 @@ import Post from './Post';
 import PropTypes from "prop-types";
 import './App.css'
 
-
 function PostList(props) {
-    console.log(props);
         return (
         <div className="postList">
             {props.postList.map((item) =>
@@ -13,7 +11,6 @@ function PostList(props) {
             )}
         </div>
         );
-    
 }
 
 
