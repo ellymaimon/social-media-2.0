@@ -16,13 +16,12 @@ const styles = {
 };
 
 function SimpleAppBar(props) {
-    const { classes } = props;
 
     return <div>
         <AppBar position="static" color="default">
           <Toolbar className="navBar">
             <Typography variant="title" color="inherit">
-              Photos
+              Kevin-book
             </Typography>
             <Badge badgeContent={props.count} color="primary">
               <MailIcon />

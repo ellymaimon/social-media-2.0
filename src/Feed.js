@@ -19,14 +19,12 @@ class Feed extends Component {
   handleAddingNewPost(newPost) {
     let newPostList = this.state.masterPostList.slice();
     newPostList.push(newPost);
-    this.updateBadge();
     this.setState({ masterPostList: newPostList });
+    this.updateBadge(newPostList.length);
   }
 
-  updateBadge() {
-    let postCount = this.state.masterPostList.length + 1;
-    console.log(postCount);
-    this.setState({ count: postCount });
+  updateBadge(length) {
+    this.setState({ count: length });
   }
 
   render() {
