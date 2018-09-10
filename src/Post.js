@@ -56,24 +56,24 @@ class PostCard extends React.Component {
       color="secondary";
     }
     
-    
-    return (<Card className={classes.card}>
-        <CardContent>
-          <Typography className={classes.title} color="textSecondary">
-            Name: {this.props.name}
-          </Typography>
-          <Typography className={classes.pos} color="textSecondary">
-          Time: {this.props.time}
-          </Typography>
-        <Typography component="p">{this.props.description}</Typography>
-        </CardContent>
-        <CardActions>
-          <IconButton>
-          <FavoriteIcon color={color} onClick={this.handleLike}/>
-          </IconButton>
-        </CardActions>
-      </Card>
-    );
+    return <div className="postItem">
+        <Card className={classes.card}>
+          <CardContent>
+            <Typography className={classes.title} color="textSecondary">
+              Name: {this.props.name}
+            </Typography>
+            <Typography className={classes.pos} color="textSecondary">
+              Time: {this.props.time}
+            </Typography>
+            <Typography component="p">{this.props.description}</Typography>
+          </CardContent>
+          <CardActions>
+            <IconButton>
+              <FavoriteIcon color={color} onClick={this.handleLike} />
+            </IconButton>
+          </CardActions>
+        </Card>
+      </div>;
 
   }
 }

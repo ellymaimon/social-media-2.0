@@ -8,22 +8,22 @@ class Feed extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      newPostList: []
+      masterPostList: []
     };
     this.handleAddingNewPost = this.handleAddingNewPost.bind(this);
   }
 
   handleAddingNewPost(newPost) {
-    let newPostList = this.state.newPostList.slice();
+    let newPostList = this.state.masterPostList.slice();
     newPostList.push(newPost);
-    this.setState({ masterTicketList: newPostList });
+    this.setState({ masterPostList: newPostList });
   }
 
   render() {
     return (
       <div>
         <PostForm onNewPostCreation={this.handleAddingNewPost}/>
-        <PostList />
+        <PostList postList={this.state.masterPostList}/>
       </div>
     );
   }

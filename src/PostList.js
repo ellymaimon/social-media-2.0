@@ -1,43 +1,48 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Post from './Post';
+import PropTypes from "prop-types";
+import './App.css'
 
 
-const examplePost = [
-  {
-    name: "Kevin Ahn",
-    time: "3:00",
-    description: "Hello World, its my birthday!"
-  },
-  {
-    name: "Kevin Ahn",
-    time: "3:00",
-    description: "Hello World, its my birthday!"
-  },
-  {
-        name: "Kevin Ahn",
-        time: "3:00",
-        description: "Hello World, its my birthday!",
-    },
-    {
-        name: "Kevin Ahn",
-        time: "3:00",
-        description: "Hello World, its my birthday!",
-    },
-];
 
-class PostList extends Component {
-    render() {
+// const examplePost = [
+//   {
+//     name: "Kevin Ahn",
+//     time: "3:00",
+//     description: "Hello World, its my birthday!"
+//   },
+//   {
+//     name: "Kevin Ahn",
+//     time: "3:00",
+//     description: "Hello World, its my birthday!"
+//   },
+//   {
+//         name: "Kevin Ahn",
+//         time: "3:00",
+//         description: "Hello World, its my birthday!",
+//     },
+//     {
+//         name: "Kevin Ahn",
+//         time: "3:00",
+//         description: "Hello World, its my birthday!",
+//     },
+// ];
+
+function PostList(props) {
+    console.log(props);
         return (
-        <div >
-            {examplePost.map((item, index) =>
-            <div>
-             <Post { ...item} key={index}/>
-             <br />
-             </div>
+        <div className="postList">
+            {props.postList.map((item) =>
+             <Post { ...item} key={item.id}/>
             )}
         </div>
         );
-    }
+    
 }
+
+
+PostList.propTypes = {
+    postList: PropTypes.array
+};
 
 export default PostList;
