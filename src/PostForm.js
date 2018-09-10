@@ -28,15 +28,9 @@ const styles = theme => ({
 
 function PostForm(props) {
 	const { classes } = props;
-	let _name = null;
-	let _description = null;
-
 
 	function handlePostSubmission(event) {
-		
-		
 		event.preventDefault();
-		//console.log(_name.value);
 		const name = event.target.elements.name.value;
 		const description = event.target.elements.description.value;
 		props.onNewPostCreation({name: name, time: makeTime(), 
