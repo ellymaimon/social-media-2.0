@@ -11,3 +11,14 @@
 .postItem {
     margin-bottom: 2%;
 }
+
+.postForm {
+    margin: 5% 30% 0% 30%;
+}
+
+.postForm form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5%;
+}

@@ -7,9 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import IconButton from "@material-ui/core/IconButton";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-
-
-
+import Avatar from "@material-ui/core/Avatar";
+import kevin from "./images/kevin.jpeg"
 
 const styles = {
   card: {
@@ -26,6 +25,10 @@ const styles = {
   },
   pos: {
     marginBottom: 12,
+  },
+  bigAvatar: {
+    width: 60,
+    height: 60,
   },
 };
 
@@ -59,8 +62,9 @@ class PostCard extends React.Component {
     return <div className="postItem">
         <Card className={classes.card}>
           <CardContent>
+          <Avatar alt="Remy Sharp" src={kevin} className={classes.bigAvatar} />
             <Typography className={classes.title} color="textSecondary">
-              Name: {this.props.name}
+            {this.props.name}
             </Typography>
             <Typography className={classes.pos} color="textSecondary">
               Time: {this.props.time}
