@@ -54,8 +54,6 @@ class PostCard extends React.Component {
     let color = "inherit";
     if (this.state.liked) {
       color="secondary";
-    } else if (!this.state.liked) {
-     color="inherit"
     }
     
     
