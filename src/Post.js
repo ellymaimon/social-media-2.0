@@ -29,9 +29,7 @@ const styles = {
   },
 };
 
-// function handleLike() {
 
-// }
 
 class PostCard extends React.Component {
 
@@ -40,13 +38,27 @@ class PostCard extends React.Component {
     this.state= {
       liked: false
     }
-    // this.handleLike = this.handleLike.bind(this)
+    this.handleLike = this.handleLike.bind(this)
   }
+
+  handleLike() {
+    this.setState(prevState => ({
+      liked: !prevState.liked
+    }));
+  };
   
   
 
   render() {
     const { classes } = this.props;
+    let color = "inherit";
+    if (this.state.liked) {
+      color="secondary";
+    } else if (!this.state.liked) {
+     color="inherit"
+    }
+    
+    
     return (<Card className={classes.card}>
         <CardContent>
           <Typography className={classes.title} color="textSecondary">
@@ -59,7 +71,7 @@ class PostCard extends React.Component {
         </CardContent>
         <CardActions>
           <IconButton>
-          <FavoriteIcon color="secondary" />
+          <FavoriteIcon color={color} onClick={this.handleLike}/>
           </IconButton>
         </CardActions>
       </Card>
